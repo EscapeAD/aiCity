@@ -11,7 +11,12 @@ class Graph {
     addSegment(segment){
         this.segments.push(segment)
     }
-    
+    removeSegment(seg){
+        this.segments.splice(this.segments.indexOf(seg), 1)
+    }
+    removePoint(point){
+        this.points.splice(this.points.indexOf(point), 1)
+    }
     containsPoint(point){
         return this.points.find(p=> p.equals(point))
     }
