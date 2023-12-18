@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>World Editor</h1>
-    <canvas id="myCanvas"></canvas>
+    <canvas id="myWorld"></canvas>
     <div id="controls">
         <button onClick="addRandomPoint()">Add Random Point</button>
         <button onClick="addRandomSeg()">Add Segment Point</button>
@@ -28,7 +28,7 @@
             graph.removePoint(
                 graph.segments[index]
             )
-            ctx.clearRect(0, 0, myCanvas.width, myCanvas.height)
+            ctx.clearRect(0, 0, myWorld.width, myWorld.height)
             graph.draw(ctx)    
         }
         function removeRandomSegment(){
@@ -40,17 +40,17 @@
             graph.removeSegment(
                 graph.segments[index]
             )
-            ctx.clearRect(0, 0, myCanvas.width, myCanvas.height)
+            ctx.clearRect(0, 0, myWorld.width, myWorld.height)
             graph.draw(ctx)
         }
         function addRandomPoint(){
             graph.tryAddPoint(
                 new Point(
-                    Math.random() * myCanvas.width,
-                    Math.random() * myCanvas.height
+                    Math.random() * myWorld.width,
+                    Math.random() * myWorld.height
                 )
             )
-            ctx.clearRect(0, 0, myCanvas.width, myCanvas.height)
+            ctx.clearRect(0, 0, myWorld.width, myWorld.height)
             graph.draw(ctx)
         }
         function addRandomSeg(){
@@ -59,12 +59,12 @@
             graph.tryAddSegment(
                 new Segment(graph.points[index1], graph.points[index2])
             )
-            ctx.clearRect(0, 0, myCanvas.width, myCanvas.height)
+            ctx.clearRect(0, 0, myWorld.width, myWorld.height)
             graph.draw(ctx)
         }
-        myCanvas.width = 600;
-        myCanvas.height = 600;
-        const ctx = myCanvas.getContext("2d")
+        myWorld.width = 600;
+        myWorld.height = 600;
+        const ctx = myWorld.getContext("2d")
         const p1 = new Point(200,200);
         const p2 = new Point(233,312)
         const p3 = new Point(244,111)
