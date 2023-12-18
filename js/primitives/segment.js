@@ -3,6 +3,9 @@ class Segment {
         this.p1 = p1;
         this.p2 = p2;
     }
+    equals(segment){
+        return (this.p1.equals(segment.p1) && this.p2.equals(segment.p2)) || (this.p1.equals(segment.p2) && this.p2.equals(segment.p1))
+    }
     
     draw(ctx, width = 2, color = "black"){
         ctx.beginPath()
